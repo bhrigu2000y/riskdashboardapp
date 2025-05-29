@@ -2,6 +2,8 @@
 # Ensures compatibility and environment safety
 
 import streamlit as st
+st.set_page_config(page_title="Project Risk Assessment Dashboard", layout="wide")
+
 import pandas as pd
 import numpy as np
 import plotly.express as px
