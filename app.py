@@ -68,7 +68,6 @@ else:
 # ----------------------------
 # Streamlit UI
 # ----------------------------
-st.set_page_config(page_title="Project Risk Assessment Dashboard", layout="wide")
 st.title("📈 Project Risk Assessment Dashboard")
 
 uploaded_file = st.file_uploader("Upload your project CSV file", type=["csv"])
