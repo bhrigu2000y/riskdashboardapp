@@ -1,6 +1,5 @@
 import streamlit as st
-
-# ✅ This must be the first Streamlit command
+# ✅ Must be the first Streamlit command
 st.set_page_config(page_title="Project Risk Assessment Dashboard", layout="wide")
 
 import pandas as pd
