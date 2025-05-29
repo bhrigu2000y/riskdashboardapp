@@ -1,5 +1,5 @@
 import streamlit as st
-# ✅ Must be the first Streamlit command
+# Must be the first Streamlit command
 st.set_page_config(page_title="Project Risk Assessment Dashboard", layout="wide")
 
 import pandas as pd
@@ -68,12 +68,12 @@ else:
 # ----------------------------
 # Streamlit UI
 # ----------------------------
-st.title("📈 Project Risk Assessment Dashboard")
+st.title(" Project Risk Assessment Dashboard")
 
 uploaded_file = st.file_uploader("Upload your project CSV file", type=["csv"])
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
-    st.subheader("📋 Uploaded Data Preview")
+    st.subheader(" Uploaded Data Preview")
     st.dataframe(df.head())
 
     try:
@@ -81,10 +81,10 @@ if uploaded_file:
         predictions = model.predict(features)
         df['Risk Level'] = np.where(predictions == 1, 'High', 'Low')
 
-        st.subheader("🚦 Task Risk Prediction")
+        st.subheader(" Task Risk Prediction")
         st.dataframe(df[['Task Name', 'Phase', 'Risk Level']])
 
-        st.subheader("📊 Risk by Project Phase")
+        st.subheader(" Risk by Project Phase")
         fig = px.histogram(df, x="Phase", color="Risk Level", barmode="group",
                            title="Risk Distribution by Phase")
         st.plotly_chart(fig, use_container_width=True)
